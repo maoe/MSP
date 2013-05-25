@@ -1,0 +1,31 @@
+
+name:                MSP
+version:             0.0.0
+synopsis:            A Gentle Introduction to Multi-stage Programming in Haskell
+license:             BSD3
+license-file:        LICENSE
+author:              Mitsutoshi Aoe
+maintainer:          Mitsutoshi Aoe <maoe@foldr.in>
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+    Symantics
+    Simple
+    Staged
+    ErrorHandling
+    ErrorHandlingStaged
+
+  build-depends:
+      base == 4.*
+    , template-haskell
+
+benchmark bench
+  type: exitcode-stdio-1.0
+  main-is: bench.hs
+  build-depends:
+      base
+    , criterion
+    , deepseq
+    , template-haskell
