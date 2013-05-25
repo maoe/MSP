@@ -16,6 +16,8 @@ library
     Staged
     ErrorHandling
     ErrorHandlingStaged
+    CPS
+    CPSStaged
 
   build-depends:
       base == 4.*
