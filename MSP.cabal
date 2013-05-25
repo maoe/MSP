@@ -19,6 +19,8 @@ library
     CPS
     CPSStaged
     Inlining
+    InliningNoDup
+    All
 
   build-depends:
       base == 4.*

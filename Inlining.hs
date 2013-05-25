@@ -35,10 +35,6 @@ instance SymExp Inlining where
         else $(e3 env fenv)
     |]
 
-repeat :: Int -> (a -> a) -> a -> a
-repeat 0 f = f
-repeat n f = f . repeat (n-1) f
-
 instance SymDecl Inlining where
   declaration s1 s2 (Inlining e1) (Inlining e) =
     Inlining $ \env fenv -> [|

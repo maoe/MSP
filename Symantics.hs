@@ -1,4 +1,5 @@
 module Symantics where
+import Prelude hiding (repeat)
 
 class SymExp repr where
   int :: Int -> repr
@@ -33,3 +34,7 @@ fact = declaration "fact" "x" $
 
 fact15 :: (SymExp repr, SymDecl repr, SymProg repr) => repr
 fact15 = program [fact] $ app "fact" (int 15)
+
+repeat :: Int -> (a -> a) -> a -> a
+repeat 0 f = f
+repeat n f = f . repeat (n-1) f
