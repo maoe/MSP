@@ -18,6 +18,7 @@ library
     ErrorHandlingStaged
     CPS
     CPSStaged
+    Inlining
 
   build-depends:
       base == 4.*

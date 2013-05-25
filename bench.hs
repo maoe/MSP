@@ -10,6 +10,7 @@ import ErrorHandling
 import ErrorHandlingStaged
 import CPS
 import CPSStaged
+import Inlining
 
 main :: IO ()
 main = defaultMain
@@ -20,5 +21,6 @@ main = defaultMain
       , bench "error-handling-staged" $ nf ($(evalEHS fact15) `deepseq`) ()
       , bench "cps" $ nf (evalCPS fact15 `deepseq`) ()
       , bench "cps-staged" $ nf ($(evalCPSS fact15) `deepseq`) ()
+      , bench "inlining" $ nf ($(evalInlining fact15) `deepseq`) ()
       ]
   ]
